@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virgo Sphere with Green and Cerulean - Standardized</title>
+    <style>
+        /* Base styling for black background */
+        html, body { 
+            height: 100%; 
+            margin: 0;
+            padding: 0;
+            background: #000000;
+        }
+        
+        body { 
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Virgo specific container with unique class name */
+        .virgo-sphere-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background: transparent;
+        }
+        
+        /* Virgo sphere layers */
+        .virgo-aura-sphere {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+        
+        .virgo-outer-aura {
+            width: 280px;
+            height: 280px;
+            /* Outer aura - stronger deep green */
+            background: radial-gradient(circle, rgba(10,150,80,0.5) 0%, rgba(10,150,80,0) 70%);
+            animation: virgo-pulse-outer 6s infinite ease-in-out;
+            z-index: 1;
+        }
+        
+        .virgo-middle-aura {
+            width: 220px;
+            height: 220px;
+            /* Middle aura - cerulean blue */
+            background: radial-gradient(circle, rgba(0,123,255,0.45) 0%, rgba(0,123,255,0) 70%);
+            animation: virgo-pulse-middle 5s infinite ease-in-out;
+            z-index: 2;
+        }
+        
+        .virgo-inner-aura {
+            width: 160px;
+            height: 160px;
+            /* Inner aura - stronger deep green */
+            background: radial-gradient(circle, rgba(8,150,80,0.9) 30%, rgba(8,150,80,0) 70%);
+            animation: virgo-pulse-inner 4s infinite ease-in-out;
+            z-index: 3;
+        }
+        
+        /* Sacred geometry container - STANDARDIZED */
+        .virgo-geometry-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            z-index: 4;
+            opacity: 0.25;
+            mix-blend-mode: screen;
+            animation: virgo-geometry-glow 7s infinite ease-in-out;
+        }
+        
+        .virgo-geometry-pattern {
+            margin: auto;
+            width: 140px;
+            height: 140px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            box-sizing: border-box;
+            animation: virgo-geometry-rotate 60s infinite linear;
+        }
+        
+        /* Virgo-specific animations */
+        @keyframes virgo-pulse-outer {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+            50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.5; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+        }
+        
+        @keyframes virgo-pulse-middle {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+            50% { transform: translate(-50%, -50%) scale(1.08); opacity: 0.7; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+        }
+        
+        @keyframes virgo-pulse-inner {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+        }
+        
+        @keyframes virgo-geometry-rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes virgo-geometry-glow {
+            0% { opacity: 0.20; }
+            50% { opacity: 0.30; }
+            100% { opacity: 0.20; }
+        }
+    </style>
+</head>
+<body>
+    <div class="virgo-sphere-container">
+        <!-- Aura Spheres with Virgo colors -->
+        <div class="virgo-aura-sphere virgo-outer-aura"></div>
+        <div class="virgo-aura-sphere virgo-middle-aura"></div>
+        <div class="virgo-aura-sphere virgo-inner-aura"></div>
+        
+        <!-- Sacred Geometry Pattern -->
+        <div class="virgo-geometry-container">
+            <div class="virgo-geometry-pattern">
+                <svg viewBox="-70 -70 140 140" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none">
+                        <!-- Enclosing circle for vector equilibrium -->
+                        <circle cx="0" cy="0" r="60" 
+                               stroke="rgba(0,150,255,0.7)" 
+                               stroke-width="0.7" 
+                               fill="none">
+                            <animate attributeName="stroke" values="rgba(0,100,255,0.6);rgba(0,200,255,0.9);rgba(0,100,255,0.6)" dur="8s" repeatCount="indefinite" />
+                        </circle>
+                        
+                        <!-- Vector equilibrium pattern - 3 tapered shapes at 120° intervals -->
+                        <!-- Each shape extends exactly to r=60 at the points, touching the circle -->
+                        
+                        <!-- First tapered shape (vertical) -->
+                        <path d="M 0,-60 Q -18,-33 -22.5,0 Q -18,33 0,60 Q 18,33 22.5,0 Q 18,-33 0,-60 Z" 
+                              stroke="rgba(0,150,255,0.7)" 
+                              stroke-width="0.7" 
+                              fill="none">
+                            <animate attributeName="stroke" values="rgba(0,100,255,0.6);rgba(0,200,255,0.9);rgba(0,100,255,0.6)" dur="8s" repeatCount="indefinite" begin="0.5s" />
+                        </path>
+                        
+                        <!-- Second tapered shape (rotated 120°) -->
+                        <path d="M 0,-60 Q -18,-33 -22.5,0 Q -18,33 0,60 Q 18,33 22.5,0 Q 18,-33 0,-60 Z" 
+                              stroke="rgba(0,150,255,0.7)" 
+                              stroke-width="0.7" 
+                              fill="none"
+                              transform="rotate(120)">
+                            <animate attributeName="stroke" values="rgba(0,100,255,0.6);rgba(0,200,255,0.9);rgba(0,100,255,0.6)" dur="8s" repeatCount="indefinite" begin="1s" />
+                        </path>
+                        
+                        <!-- Third tapered shape (rotated 240°) -->
+                        <path d="M 0,-60 Q -18,-33 -22.5,0 Q -18,33 0,60 Q 18,33 22.5,0 Q 18,-33 0,-60 Z" 
+                              stroke="rgba(0,150,255,0.7)" 
+                              stroke-width="0.7" 
+                              fill="none"
+                              transform="rotate(240)">
+                            <animate attributeName="stroke" values="rgba(0,100,255,0.6);rgba(0,200,255,0.9);rgba(0,100,255,0.6)" dur="8s" repeatCount="indefinite" begin="1.5s" />
+                        </path>
+                        
+                        <!-- Internal connecting lines - from tip to opposite tip -->
+                        
+                        <!-- First line: vertical (connects top and bottom tips) -->
+                        <line x1="0" y1="-60" x2="0" y2="60" 
+                              stroke="rgba(0,150,255,0.7)" 
+                              stroke-width="0.7">
+                            <animate attributeName="stroke" values="rgba(0,100,255,0.6);rgba(0,200,255,0.9);rgba(0,100,255,0.6)" dur="8s" repeatCount="indefinite" begin="2s" />
+                        </line>
+                        
+                        <!-- Second line: rotated 120° (connects tips at 120° angle) -->
+                        <line x1="0" y1="-60" x2="0" y2="60" 
+                              stroke="rgba(0,150,255,0.7)" 
+                              stroke-width="0.7"
+                              transform="rotate(120)">
+                            <animate attributeName="stroke" values="rgba(0,100,255,0.6);rgba(0,200,255,0.9);rgba(0,100,255,0.6)" dur="8s" repeatCount="indefinite" begin="2.5s" />
+                        </line>
+                        
+                        <!-- Third line: rotated 240° (connects tips at 240° angle) -->
+                        <line x1="0" y1="-60" x2="0" y2="60" 
+                              stroke="rgba(0,150,255,0.7)" 
+                              stroke-width="0.7"
+                              transform="rotate(240)">
+                            <animate attributeName="stroke" values="rgba(0,100,255,0.6);rgba(0,200,255,0.9);rgba(0,100,255,0.6)" dur="8s" repeatCount="indefinite" begin="3s" />
+                        </line>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

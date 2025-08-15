@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquarius Aura Sphere with Merkaba</title>
+    <style>
+        html, body { 
+            height: 100%; 
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        body { 
+            background: #000000; 
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .aquarius-aura-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+        
+        .aquarius-aura-sphere {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+        
+        .aquarius-outer-aura {
+            width: 280px;
+            height: 280px;
+            /* Silver-white outer layer */
+            background: radial-gradient(circle, rgba(200,220,240,0.4) 0%, rgba(200,220,240,0) 70%);
+            animation: aquarius-pulse-outer 6s infinite ease-in-out;
+            z-index: 1;
+        }
+        
+        .aquarius-middle-aura {
+            width: 220px;
+            height: 220px;
+            /* Electric blue middle layer */
+            background: radial-gradient(circle, rgba(0,150,255,0.6) 0%, rgba(0,150,255,0) 70%);
+            animation: aquarius-pulse-middle 5s infinite ease-in-out;
+            z-index: 2;
+        }
+        
+        .aquarius-inner-aura {
+            width: 160px;
+            height: 160px;
+            /* Bright aqua inner layer */
+            background: radial-gradient(circle, rgba(0,255,255,0.8) 30%, rgba(0,255,255,0) 70%);
+            animation: aquarius-pulse-inner 4s infinite ease-in-out;
+            z-index: 3;
+        }
+        
+        /* Merkaba container - matching specifications */
+        .aquarius-merkaba-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            overflow: hidden;
+            z-index: 4;
+            opacity: 0.25;
+            mix-blend-mode: screen;
+            animation: aquarius-merkaba-glow 7s infinite ease-in-out;
+        }
+        
+        .aquarius-merkaba-geometry {
+            margin: auto;
+            width: 160px;
+            height: 160px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            box-sizing: border-box;
+            animation: aquarius-merkaba-rotate 60s infinite linear;
+        }
+        
+        .aquarius-merkaba-svg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        @keyframes aquarius-pulse-outer {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+            50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.5; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+        }
+        
+        @keyframes aquarius-pulse-middle {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+            50% { transform: translate(-50%, -50%) scale(1.08); opacity: 0.7; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+        }
+        
+        @keyframes aquarius-pulse-inner {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+        }
+        
+        @keyframes aquarius-merkaba-rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes aquarius-merkaba-glow {
+            0% { opacity: 0.20; }
+            50% { opacity: 0.30; }
+            100% { opacity: 0.20; }
+        }
+    </style>
+</head>
+<body>
+    <div class="aquarius-aura-container">
+        <!-- Aura Spheres -->
+        <div class="aquarius-aura-sphere aquarius-outer-aura"></div>
+        <div class="aquarius-aura-sphere aquarius-middle-aura"></div>
+        <div class="aquarius-aura-sphere aquarius-inner-aura"></div>
+        
+        <!-- Merkaba Sacred Geometry -->
+        <div class="aquarius-merkaba-container">
+            <div class="aquarius-merkaba-geometry">
+                <svg class="aquarius-merkaba-svg" viewBox="-70 -70 140 140" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <!-- Vibrant saturated purple gradient -->
+                        <linearGradient id="electricPurpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="rgba(148,0,211,0.9)" />
+                            <stop offset="50%" stop-color="rgba(255,0,255,1.0)" />
+                            <stop offset="100%" stop-color="rgba(148,0,211,0.9)" />
+                            <animate attributeName="x1" values="0%;100%;0%" dur="12s" repeatCount="indefinite" />
+                            <animate attributeName="y1" values="0%;100%;0%" dur="12s" repeatCount="indefinite" />
+                            <animate attributeName="x2" values="100%;0%;100%" dur="12s" repeatCount="indefinite" />
+                            <animate attributeName="y2" values="100%;0%;100%" dur="12s" repeatCount="indefinite" />
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Background circle -->
+                    <circle cx="0" cy="0" r="68" fill="none" stroke="rgba(148,0,211,0.15)" stroke-width="0.4" />
+                    
+                    <!-- Simplified Merkaba - Two Clean Triangles (Venus pentagram size) -->
+                    <g id="aquariusMerkabaPattern">
+                        <!-- Upper Triangle (pointing up) - larger size -->
+                        <polygon points="0,-53 -46,26 46,26" 
+                                fill="none" 
+                                stroke="url(#electricPurpleGradient)" 
+                                stroke-width="1.4">
+                            <animate attributeName="stroke-width" values="1.2;1.8;1.2" dur="8s" repeatCount="indefinite" />
+                        </polygon>
+                        
+                        <!-- Lower Triangle (pointing down) - larger size -->
+                        <polygon points="0,53 -46,-26 46,-26" 
+                                fill="none" 
+                                stroke="url(#electricPurpleGradient)" 
+                                stroke-width="1.4">
+                            <animate attributeName="stroke-width" values="1.2;1.8;1.2" dur="8s" repeatCount="indefinite" begin="2s" />
+                        </polygon>
+                        
+                        <!-- Small central triangle -->
+                        <polygon points="0,-12 -10,6 10,6" 
+                                fill="none" 
+                                stroke="url(#electricPurpleGradient)" 
+                                stroke-width="0.8">
+                            <animate attributeName="stroke-width" values="0.6;1.0;0.6" dur="6s" repeatCount="indefinite" begin="1s" />
+                        </polygon>
+                        
+                        <!-- Central purple dot -->
+                        <circle cx="0" cy="0" r="2.5" 
+                               fill="url(#electricPurpleGradient)" 
+                               opacity="0.9">
+                            <animate attributeName="r" values="2;3;2" dur="4s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="0.8;1.0;0.8" dur="5s" repeatCount="indefinite" />
+                        </circle>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

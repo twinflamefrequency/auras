@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scorpio Aura Sphere with Fibonacci Spiral - Clean</title>
+    <style>
+        html, body { 
+            height: 100%; 
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        body { 
+            background: #000000; 
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .scorpio-aura-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+        
+        .scorpio-aura-sphere {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+        
+        .scorpio-outer-aura {
+            width: 280px;
+            height: 280px;
+            /* Ultramarine blue outer layer */
+            background: radial-gradient(circle, rgba(63,81,181,0.4) 0%, rgba(63,81,181,0) 70%);
+            animation: scorpio-pulse-outer 6s infinite ease-in-out;
+            z-index: 1;
+        }
+        
+        .scorpio-middle-aura {
+            width: 220px;
+            height: 220px;
+            /* Rich purple middle layer */
+            background: radial-gradient(circle, rgba(96,36,237,0.6) 0%, rgba(96,36,237,0) 70%);
+            animation: scorpio-pulse-middle 5s infinite ease-in-out;
+            z-index: 2;
+        }
+        
+        .scorpio-inner-aura {
+            width: 160px;
+            height: 160px;
+            /* Midnight blue inner layer */
+            background: radial-gradient(circle, rgba(25,25,112,0.8) 30%, rgba(25,25,112,0) 70%);
+            animation: scorpio-pulse-inner 4s infinite ease-in-out;
+            z-index: 3;
+        }
+        
+        /* Sacred geometry container - STANDARDIZED */
+        .scorpio-geometry-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            z-index: 4;
+            opacity: 0.25;
+            mix-blend-mode: screen;
+            animation: scorpio-geometry-glow 7s infinite ease-in-out;
+        }
+        
+        .scorpio-geometry {
+            margin: auto;
+            width: 140px;
+            height: 140px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            box-sizing: border-box;
+            animation: scorpio-geometry-rotate 60s infinite linear;
+        }
+        
+        .scorpio-geometry-svg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        @keyframes scorpio-pulse-outer {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+            50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.5; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+        }
+        
+        @keyframes scorpio-pulse-middle {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+            50% { transform: translate(-50%, -50%) scale(1.08); opacity: 0.7; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+        }
+        
+        @keyframes scorpio-pulse-inner {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+        }
+        
+        @keyframes scorpio-geometry-rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes scorpio-geometry-glow {
+            0% { opacity: 0.20; }
+            50% { opacity: 0.30; }
+            100% { opacity: 0.20; }
+        }
+    </style>
+</head>
+<body>
+    <div class="scorpio-aura-container">
+        <!-- Aura Spheres -->
+        <div class="scorpio-aura-sphere scorpio-outer-aura"></div>
+        <div class="scorpio-aura-sphere scorpio-middle-aura"></div>
+        <div class="scorpio-aura-sphere scorpio-inner-aura"></div>
+        
+        <!-- Fibonacci Spiral Pattern -->
+        <div class="scorpio-geometry-container">
+            <div class="scorpio-geometry">
+                <svg class="scorpio-geometry-svg" viewBox="-70 -70 140 140" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Golden spiral represented as perfect tangent circles -->
+                    <g id="scorpioGoldenCircles">
+                        <!-- Circle 1 (largest) -->
+                        <circle cx="0" cy="0" r="60" fill="none" stroke="rgba(0,174,239,0.7)" stroke-width="0.8">
+                            <animate attributeName="stroke" values="rgba(0,174,239,0.6);rgba(63,81,181,0.8);rgba(0,174,239,0.6)" dur="6s" repeatCount="indefinite" />
+                            <animate attributeName="stroke-width" values="0.7;1.0;0.7" dur="5s" repeatCount="indefinite" />
+                        </circle>
+                        
+                        <!-- Circle 2 - Perfectly tangent to circle 1 -->
+                        <circle cx="22" cy="8" r="37" fill="none" stroke="rgba(44,62,140,0.7)" stroke-width="0.8">
+                            <animate attributeName="stroke" values="rgba(44,62,140,0.6);rgba(63,81,181,0.8);rgba(44,62,140,0.6)" dur="5.5s" repeatCount="indefinite" begin="0.2s" />
+                            <animate attributeName="stroke-width" values="0.7;1.0;0.7" dur="4.5s" repeatCount="indefinite" begin="0.2s" />
+                        </circle>
+                        
+                        <!-- Circle 3 - Perfectly tangent to circle 2 -->
+                        <circle cx="11" cy="17" r="23" fill="none" stroke="rgba(0,174,239,0.7)" stroke-width="0.8">
+                            <animate attributeName="stroke" values="rgba(0,174,239,0.6);rgba(63,81,181,0.8);rgba(0,174,239,0.6)" dur="5s" repeatCount="indefinite" begin="0.4s" />
+                            <animate attributeName="stroke-width" values="0.7;1.0;0.7" dur="4s" repeatCount="indefinite" begin="0.4s" />
+                        </circle>
+                        
+                        <!-- Circle 4 - Perfectly tangent to circle 3 -->
+                        <circle cx="6" cy="9" r="14" fill="none" stroke="rgba(44,62,140,0.7)" stroke-width="0.8">
+                            <animate attributeName="stroke" values="rgba(44,62,140,0.6);rgba(63,81,181,0.8);rgba(44,62,140,0.6)" dur="4.5s" repeatCount="indefinite" begin="0.6s" />
+                            <animate attributeName="stroke-width" values="0.7;1.0;0.7" dur="3.5s" repeatCount="indefinite" begin="0.6s" />
+                        </circle>
+                        
+                        <!-- Circle 5 - Perfectly tangent to circle 4 -->
+                        <circle cx="12" cy="8" r="8.5" fill="none" stroke="rgba(0,174,239,0.7)" stroke-width="0.8">
+                            <animate attributeName="stroke" values="rgba(0,174,239,0.6);rgba(63,81,181,0.8);rgba(0,174,239,0.6)" dur="4s" repeatCount="indefinite" begin="0.8s" />
+                            <animate attributeName="stroke-width" values="0.7;1.0;0.7" dur="3s" repeatCount="indefinite" begin="0.8s" />
+                        </circle>
+                        
+                        <!-- Circle 6 (smallest) - Perfectly tangent to circle 5 -->
+                        <circle cx="11" cy="12" r="5" fill="none" stroke="rgba(44,62,140,0.7)" stroke-width="0.8">
+                            <animate attributeName="stroke" values="rgba(44,62,140,0.6);rgba(63,81,181,0.8);rgba(44,62,140,0.6)" dur="3.5s" repeatCount="indefinite" begin="1.0s" />
+                            <animate attributeName="stroke-width" values="0.7;1.0;0.7" dur="2.5s" repeatCount="indefinite" begin="1.0s" />
+                        </circle>
+                    </g>
+                </svg>
+                    
+                    <!-- Animate the pattern rotation -->
+                    <animateTransform 
+                        xlink:href="#scorpioSpiralPattern"
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="rotate"
+                        from="0 0 0"
+                        to="360 0 0"
+                        dur="60s"
+                        repeatCount="indefinite" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

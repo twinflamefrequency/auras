@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquarius Aura Sphere with Simplified Star Tetrahedron</title>
+    <style>
+        html, body { 
+            height: 100%; 
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        body { 
+            background: #000000; /* Changed to pure black */
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .aura-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+        
+        .aura-sphere {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+        
+        .outer-aura {
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(42,76,157,0.4) 0%, rgba(42,76,157,0) 70%);
+            animation: pulse-outer 6s infinite ease-in-out;
+            z-index: 1;
+        }
+        
+        .middle-aura {
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(122,108,247,0.6) 0%, rgba(122,108,247,0) 70%);
+            animation: pulse-middle 5s infinite ease-in-out;
+            z-index: 2;
+        }
+        
+        .inner-aura {
+            width: 160px;
+            height: 160px;
+            background: radial-gradient(circle, rgba(75,158,251,0.8) 30%, rgba(75,158,251,0) 70%);
+            animation: pulse-inner 4s infinite ease-in-out;
+            z-index: 3;
+        }
+        
+        /* Transparent Star Tetrahedron container */
+        .merkaba-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 160px;
+            height: 160px;
+            perspective: 800px;
+            z-index: 4;
+            opacity: 0.14; /* Reduced to match Aries base opacity */
+            mix-blend-mode: screen;
+            animation: merkaba-glow 7s infinite ease-in-out;
+        }
+        
+        /* Flat-rotating Star Tetrahedron */
+        .merkaba {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: merkaba-rotate 30s infinite linear;
+        }
+        
+        /* SVG styling */
+        svg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        @keyframes pulse-outer {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+            50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.5; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+        }
+        
+        @keyframes pulse-middle {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+            50% { transform: translate(-50%, -50%) scale(1.08); opacity: 0.7; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+        }
+        
+        @keyframes pulse-inner {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+        }
+        
+        /* Counter-clockwise rotation to match Leo and Aries */
+        @keyframes merkaba-rotate {
+            0% { transform: rotateZ(0deg); }
+            100% { transform: rotateZ(360deg); } /* Positive for counter-clockwise */
+        }
+        
+        /* Subtle glow animation */
+        @keyframes merkaba-glow {
+            0% { opacity: 0.10; }
+            50% { opacity: 0.16; }
+            100% { opacity: 0.10; }
+        }
+    </style>
+</head>
+<body>
+    <div class="aura-container">
+        <!-- Original Aura Spheres -->
+        <div class="aura-sphere outer-aura"></div>
+        <div class="aura-sphere middle-aura"></div>
+        <div class="aura-sphere inner-aura"></div>
+        
+        <!-- Simplified Star Tetrahedron with only outer edges -->
+        <div class="merkaba-container">
+            <div class="merkaba">
+                <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Define the perfect violet colors with lower opacity -->
+                    <defs>
+                        <!-- Upward-pointing tetrahedron fill -->
+                        <linearGradient id="violetUp" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(180,160,240,0.3);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgba(170,150,230,0.25);stop-opacity:1" />
+                        </linearGradient>
+                        
+                        <!-- Downward-pointing tetrahedron fill -->
+                        <linearGradient id="violetDown" x1="0%" y1="100%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:rgba(180,160,240,0.3);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgba(170,150,230,0.25);stop-opacity:1" />
+                        </linearGradient>
+                        
+                        <!-- Electric blue with violet gradient for ring -->
+                        <linearGradient id="blueVioletGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(30,210,255,0.4);stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:rgba(140,130,255,0.4);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgba(30,210,255,0.4);stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Electric blue-violet ring with smoother animation -->
+                    <circle cx="70" cy="70" r="65" fill="none" stroke="url(#blueVioletGlow)" stroke-width="0.8">
+                        <animate attributeName="stroke-width" values="0.7;1;0.7" dur="8s" repeatCount="indefinite" />
+                        <!-- More subtle radius animation that doesn't visibly reverse -->
+                        <animate attributeName="r" values="64;65.5;64" dur="8s" repeatCount="indefinite" />
+                    </circle>
+                    
+                    <!-- Upward pointing tetrahedron - only outer edges -->
+                    <polygon points="70,20 25,100 115,100" 
+                             fill="url(#violetUp)" 
+                             stroke="rgba(190,170,245,0.55)" 
+                             stroke-width="0.5">
+                        <animate attributeName="stroke" values="rgba(190,170,245,0.4);rgba(210,195,255,0.6);rgba(190,170,245,0.4)" dur="8s" repeatCount="indefinite" />
+                    </polygon>
+                    
+                    <!-- Downward pointing tetrahedron - only outer edges -->
+                    <polygon points="70,120 25,40 115,40" 
+                             fill="url(#violetDown)" 
+                             stroke="rgba(190,170,245,0.55)" 
+                             stroke-width="0.5">
+                        <animate attributeName="stroke" values="rgba(190,170,245,0.4);rgba(210,195,255,0.6);rgba(190,170,245,0.4)" dur="8s" repeatCount="indefinite" />
+                    </polygon>
+                    
+                    <!-- Subtle violet accent points at triangle vertices -->
+                    <circle cx="70" cy="20" r="1" fill="rgba(180,160,240,0.5)">
+                        <animate attributeName="fill" values="rgba(180,160,240,0.4);rgba(200,180,255,0.6);rgba(180,160,240,0.4)" dur="5s" repeatCount="indefinite" />
+                        <animate attributeName="r" values="0.8;1.2;0.8" dur="5s" repeatCount="indefinite" />
+                    </circle>
+                    
+                    <circle cx="25" cy="100" r="1" fill="rgba(180,160,240,0.5)">
+                        <animate attributeName="fill" values="rgba(180,160,240,0.4);rgba(200,180,255,0.6);rgba(180,160,240,0.4)" dur="5s" repeatCount="indefinite" begin="1.7s"/>
+                        <animate attributeName="r" values="0.8;1.2;0.8" dur="5s" repeatCount="indefinite" begin="1.7s"/>
+                    </circle>
+                    
+                    <circle cx="115" cy="100" r="1" fill="rgba(180,160,240,0.5)">
+                        <animate attributeName="fill" values="rgba(180,160,240,0.4);rgba(200,180,255,0.6);rgba(180,160,240,0.4)" dur="5s" repeatCount="indefinite" begin="3.3s"/>
+                        <animate attributeName="r" values="0.8;1.2;0.8" dur="5s" repeatCount="indefinite" begin="3.3s"/>
+                    </circle>
+                    
+                    <!-- Pulsing flash overlay -->
+                    <circle cx="70" cy="70" r="0" fill="rgba(120,140,255,0)" stroke="rgba(30,210,255,0)" stroke-width="0">
+                        <animate attributeName="r" values="0;70;0" dur="12s" repeatCount="indefinite" />
+                        <animate attributeName="fill" values="rgba(120,140,255,0);rgba(120,140,255,0.15);rgba(120,140,255,0)" dur="12s" repeatCount="indefinite" />
+                        <animate attributeName="stroke" values="rgba(30,210,255,0);rgba(140,130,255,0.3);rgba(30,210,255,0)" dur="12s" repeatCount="indefinite" />
+                        <animate attributeName="stroke-width" values="0;1.5;0" dur="12s" repeatCount="indefinite" />
+                    </circle>
+                </svg>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

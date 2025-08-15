@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagittarius Aura Sphere - Standardized</title>
+    <style>
+        html, body { 
+            height: 100%; 
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        body { 
+            background: #000000; 
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .sagittarius-aura-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+        
+        .sagittarius-aura-sphere {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+        
+        .sagittarius-outer-aura {
+            width: 280px;
+            height: 280px;
+            /* Deep ultramarine outer layer */
+            background: radial-gradient(circle, rgba(18,10,143,0.4) 0%, rgba(18,10,143,0) 70%);
+            animation: sagittarius-pulse-outer 6s infinite ease-in-out;
+            z-index: 1;
+        }
+        
+        .sagittarius-middle-aura {
+            width: 220px;
+            height: 220px;
+            /* Ultramarine middle layer */
+            background: radial-gradient(circle, rgba(63,81,181,0.6) 0%, rgba(63,81,181,0) 70%);
+            animation: sagittarius-pulse-middle 5s infinite ease-in-out;
+            z-index: 2;
+        }
+        
+        .sagittarius-inner-aura {
+            width: 160px;
+            height: 160px;
+            /* Indigo inner layer */
+            background: radial-gradient(circle, rgba(75,0,130,0.8) 30%, rgba(75,0,130,0) 70%);
+            animation: sagittarius-pulse-inner 4s infinite ease-in-out;
+            z-index: 3;
+        }
+        
+        /* Sacred geometry container - STANDARDIZED */
+        .sagittarius-geometry-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            z-index: 4;
+            opacity: 0.25;
+            mix-blend-mode: screen;
+            animation: sagittarius-geometry-glow 7s infinite ease-in-out;
+        }
+        
+        .sagittarius-geometry {
+            margin: auto;
+            width: 140px;
+            height: 140px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            box-sizing: border-box;
+            animation: sagittarius-geometry-rotate 60s infinite linear;
+        }
+        
+        /* SVG for sacred geometry */
+        .sagittarius-geometry-svg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        @keyframes sagittarius-pulse-outer {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+            50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.5; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+        }
+        
+        @keyframes sagittarius-pulse-middle {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+            50% { transform: translate(-50%, -50%) scale(1.08); opacity: 0.7; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+        }
+        
+        @keyframes sagittarius-pulse-inner {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+        }
+        
+        @keyframes sagittarius-geometry-rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes sagittarius-geometry-glow {
+            0% { opacity: 0.20; }
+            50% { opacity: 0.30; }
+            100% { opacity: 0.20; }
+        }
+    </style>
+</head>
+<body>
+    <div class="sagittarius-aura-container">
+        <!-- Aura Spheres -->
+        <div class="sagittarius-aura-sphere sagittarius-outer-aura"></div>
+        <div class="sagittarius-aura-sphere sagittarius-middle-aura"></div>
+        <div class="sagittarius-aura-sphere sagittarius-inner-aura"></div>
+        
+        <!-- Sacred Geometry Pattern - Standardized -->
+        <div class="sagittarius-geometry-container">
+            <div class="sagittarius-geometry">
+                <svg class="sagittarius-geometry-svg" viewBox="-70 -70 140 140" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Philosopher's Stone Pattern -->
+                    <g id="sagittariusPhilosopherStone">
+                        <!-- Central bindu point -->
+                        <circle cx="0" cy="0" r="1" fill="rgba(255,191,0,0.8)" />
+                        
+                        <!-- Outer circle -->
+                        <circle cx="0" cy="0" r="60" fill="none" stroke="rgba(255,191,0,0.55)" stroke-width="0.7">
+                            <animate attributeName="stroke" values="rgba(255,191,0,0.4);rgba(255,215,0,0.6);rgba(255,191,0,0.4)" dur="8s" repeatCount="indefinite" />
+                        </circle>
+                        
+                        <!-- Triangle (equilateral, touching circle at all 3 points) -->
+                        <polygon points="0,-60 52,30 -52,30" fill="none" stroke="rgba(255,191,0,0.55)" stroke-width="0.7">
+                            <animate attributeName="stroke" values="rgba(255,191,0,0.4);rgba(255,215,0,0.6);rgba(255,191,0,0.4)" dur="8s" repeatCount="indefinite" begin="0.5s" />
+                        </polygon>
+                        
+                        <!-- Square (proportionally scaled) -->
+                        <rect x="-27" y="-15" width="54" height="45" 
+                              fill="none" stroke="rgba(255,191,0,0.55)" stroke-width="0.7">
+                            <animate attributeName="stroke" values="rgba(255,191,0,0.4);rgba(255,215,0,0.6);rgba(255,191,0,0.4)" dur="8s" repeatCount="indefinite" begin="1s" />
+                        </rect>
+                        
+                        <!-- Inner circle (inside the square, centered) -->
+                        <circle cx="0" cy="7.5" r="22.5" fill="none" stroke="rgba(255,191,0,0.55)" stroke-width="0.7">
+                            <animate attributeName="stroke" values="rgba(255,191,0,0.4);rgba(255,215,0,0.6);rgba(255,191,0,0.4)" dur="8s" repeatCount="indefinite" begin="1.5s" />
+                        </circle>
+                        
+                        <!-- Additional geometric elements for visual interest -->
+                        <!-- Horizontal line through center -->
+                        <line x1="-60" y1="0" x2="60" y2="0" stroke="rgba(255,191,0,0.3)" stroke-width="0.5">
+                            <animate attributeName="stroke" values="rgba(255,191,0,0.2);rgba(255,215,0,0.4);rgba(255,191,0,0.2)" dur="8s" repeatCount="indefinite" begin="2s" />
+                        </line>
+                        
+                        <!-- Vertical line through center -->
+                        <line x1="0" y1="-60" x2="0" y2="60" stroke="rgba(255,191,0,0.3)" stroke-width="0.5">
+                            <animate attributeName="stroke" values="rgba(255,191,0,0.2);rgba(255,215,0,0.4);rgba(255,191,0,0.2)" dur="8s" repeatCount="indefinite" begin="2.5s" />
+                        </line>
+                    </g>
+                    
+                    <!-- Animate the pattern rotation -->
+                    <animateTransform 
+                        xlink:href="#sagittariusPhilosopherStone"
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="rotate"
+                        from="0 0 0"
+                        to="360 0 0"
+                        dur="60s"
+                        repeatCount="indefinite" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
